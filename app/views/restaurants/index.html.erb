@@ -4,13 +4,13 @@
     <ul><% @restaurants.each do |restaurant|%>
       <li>
       <div class ="restau_info">
-        <p>Name : <%= restaurant.name %></p>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
         <p>Adress: <%= restaurant.address %></p>
         <p>Phone: <%= restaurant.phone_number %></p>
         <p>Food Type: <%= restaurant.category %></p>
         </div>
       <div class="button">
-        <%= link_to "Give your opition", new_restaurant_review_path(restaurant),class: 'btn btn-primary' %>
+        <%= link_to "Give your opinion", new_restaurant_review_path(restaurant),class: 'btn btn-primary' %>
         <%= link_to "Edit", edit_restaurant_path(restaurant),class: 'btn btn-primary' %>
         <%= link_to "Delete", restaurant_path(restaurant),class: 'btn btn-danger', method: :delete,
       data: { confirm: "Are you sure?" } %>

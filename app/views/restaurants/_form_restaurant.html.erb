@@ -2,7 +2,7 @@
 <%= f.input :name %>
 <%= f.input :address %>
 <%= f.input :phone_number, required: false %>
-<%= f.input :category,required: false %>
+<%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] ,required: false %>
 <%if @restaurant.new_record? %>
   <%= f.submit "add a restaurant", class: "btn btn-primary" %>
 <% else %>

@@ -1,1 +1,27 @@
-<h1>show pages</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+</p>
+
+<h2>Reviews:</h2>
+<ul>
+<%= @restaurant.reviews.count %>
+  <% @restaurant.reviews.all.each do |review| %>
+    <li><strong>Rate : <%= review.rating %></strong> | <%= review.content %></li>
+  <% end %>
+</ul>
